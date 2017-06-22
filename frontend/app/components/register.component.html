@@ -1,0 +1,42 @@
+<div class="ui container">
+    <form *ngIf="!registered" class="ui form" (ngSubmit)="onSubmit()"  #registerForm="ngForm" >
+        <h2 class="ui dividing header">
+            Register User
+        </h2>
+        <div class="field">
+            <label>
+                * Name
+            </label>
+            <div class="two fields">
+                <div class="field">
+                    <input name="firstName" [(ngModel)]="newUser.firstName" placeholder="First Name" required="" type="text"/>
+                </div>
+                <div class="field">
+                    <input name="lastName" placeholder="Last Name" [(ngModel)]="newUser.lastName" required="" type="text"/>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label>
+                * Username/Password
+            </label>
+            <div class="three fields">
+                <div class="field">
+                    <input name="userName" placeholder="User Name" [(ngModel)]="newUser.userName" required="" type="text"/>
+                </div>
+                <div class="field">
+                    <input name="password" placeholder="Password" [(ngModel)]="newUser.password" required="" type="password"/>
+                </div>
+                <div class="field">
+                    <input name="password" placeholder="Password Again"  required="" type="password"/>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="ui button">Register</button>
+    </form>
+    <div *ngIf="registered" class="ui success message">
+        <div class="header">
+            Your user registered was successful.
+        </div>
+    </div>
+</div>

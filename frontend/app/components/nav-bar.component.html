@@ -1,0 +1,22 @@
+<div class="ui inverted fixed menu">
+  <a class="item" routerLink="home">
+    <img src="resources/static/pic/logo.png"  />
+  </a>
+  <a class="item" routerLink="home">
+      <h2>Lagoon</h2>
+  </a>
+  <a class="item" routerLink="home">
+      Home
+  </a>
+  <a *ngIf="loginService.checkLogin()" class="item" routerLink="my-album">
+      My Album
+  </a>
+  <div class="right menu">
+    <a *ngIf="!loginService.checkLogin()" class="item" routerLink="register">
+        Register
+    </a>
+    <a class="item" routerLink="login" (click)="onClick()">
+        {{loginService.checkLogin()? 'Logout' : 'Login'}}
+    </a>
+  </div>
+</div>
